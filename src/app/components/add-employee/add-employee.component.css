@@ -1,0 +1,28 @@
+.add-employee-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .add-employee-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .add-employee-form .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .add-employee-form .form-control {
+    width: 100%;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 15px;
+  }
+  

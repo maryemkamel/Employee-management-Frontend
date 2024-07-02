@@ -1,0 +1,109 @@
+<div class="add-employee-container container mt-5">
+    <h1 class="mb-4">Add Employee</h1>
+    <form (ngSubmit)="addEmployee()" #employeeForm="ngForm" class="add-employee-form needs-validation" novalidate>
+      
+      <div class="form-group">
+        <label for="firstName" class="form-label">First Name</label>
+        <input 
+          id="firstName" 
+          [(ngModel)]="employee.firstName" 
+          name="firstName" 
+          required 
+          class="form-control"
+          #firstName="ngModel"
+          [ngClass]="{'is-invalid': firstName.invalid && (firstName.dirty || firstName.touched)}"
+        >
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="invalid-feedback">
+          First Name is required.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input 
+          id="lastName" 
+          [(ngModel)]="employee.lastName" 
+          name="lastName" 
+          required 
+          class="form-control"
+          #lastName="ngModel"
+          [ngClass]="{'is-invalid': lastName.invalid && (lastName.dirty || lastName.touched)}"
+        >
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="invalid-feedback">
+          Last Name is required.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input 
+          id="email" 
+          [(ngModel)]="employee.email" 
+          name="email" 
+          required 
+          email 
+          class="form-control"
+          #email="ngModel"
+          [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}"
+        >
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Email must be valid.</div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input 
+          id="phoneNumber" 
+          [(ngModel)]="employee.phoneNumber" 
+          name="phoneNumber" 
+          required 
+          class="form-control"
+          #phoneNumber="ngModel"
+          [ngClass]="{'is-invalid': phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)}"
+        >
+        <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="invalid-feedback">
+          Phone Number is required.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="position" class="form-label">Position</label>
+        <input 
+          id="position" 
+          [(ngModel)]="employee.position" 
+          name="position" 
+          required 
+          class="form-control"
+          #position="ngModel"
+          [ngClass]="{'is-invalid': position.invalid && (position.dirty || position.touched)}"
+        >
+        <div *ngIf="position.invalid && (position.dirty || position.touched)" class="invalid-feedback">
+          Position is required.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="department" class="form-label">Department</label>
+        <input 
+          id="department" 
+          [(ngModel)]="employee.department" 
+          name="department" 
+          required 
+          class="form-control"
+          #department="ngModel"
+          [ngClass]="{'is-invalid': department.invalid && (department.dirty || department.touched)}"
+        >
+        <div *ngIf="department.invalid && (department.dirty || department.touched)" class="invalid-feedback">
+          Department is required.
+        </div>
+      </div>
+      
+      <div class="d-flex justify-content-between mt-3">
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+        <button type="submit" class="btn btn-primary" [disabled]="employeeForm.invalid">Add Employee</button>
+      </div>
+    </form>
+  </div>
+  
